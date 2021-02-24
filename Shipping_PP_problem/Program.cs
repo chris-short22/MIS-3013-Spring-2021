@@ -6,11 +6,16 @@ namespace Shipping_PP_problem
     {
         static void Main(string[] args)
         {
+            string answer;
+            do
+            {
+
+
             Console.WriteLine("Please enter the number of miles...");
-            string answer1 = Console.ReadLine();
+            answer = Console.ReadLine();
             //double miles = Convert.ToDouble(answer1);
             double miles;
-            bool isSuccessfull = double.TryParse(answer1, out miles);
+            bool isSuccessfull = double.TryParse(answer, out miles);
 
             if (isSuccessfull == false)
             {
@@ -19,7 +24,7 @@ namespace Shipping_PP_problem
             }
 
             Console.WriteLine("Please enter the number of miles...");
-            string answer = Console.ReadLine();
+            answer = Console.ReadLine();
             //double miles = Convert.ToDouble(answer1);
             double weight;
 
@@ -65,8 +70,16 @@ namespace Shipping_PP_problem
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine($"Total: \t{total.ToString("C")}");
 
+            Console.WriteLine($"\nDo you want to enter another shipment? yes or no?");
+            answer = Console.ReadLine();
+                while (answer.ToLower() != "yes" && answer.ToLower() != "no")
+                {
+                    Console.WriteLine("YOU MUST ENTER YES OR NO!");
+                }
+          
+            } while (answer.ToLower() == "yes");
 
-
+            Console.WriteLine("\nGoodbye");
         }
     }
 }
