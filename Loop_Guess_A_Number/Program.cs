@@ -1,6 +1,7 @@
 ﻿using System;
 
 namespace Loop_Guess_A_Number
+    //Christopher Short
 {
     class Program
     {
@@ -15,8 +16,29 @@ namespace Loop_Guess_A_Number
             int upperLimit = Convert.ToInt32(upperLimitString);
 
             Random rand = new Random();
-            int guessNum = rand.Next(lowerLimit,upperLimit);
+            int randNum = rand.Next(lowerLimit,upperLimit);
 
+            Console.WriteLine($"This is the random number. {randNum}"); //just for testing purpose
+
+            Console.WriteLine("Please enter your guess for the random number");
+            string userGuessAsString = Console.ReadLine();
+            int userGuess = Convert.ToInt32(userGuessAsString);
+
+
+
+            while (userGuess != randNum)
+            {
+                Console.WriteLine("Sorry...that was not correct. Please try again");
+                Console.WriteLine("Please enter another guess for the random number");
+                userGuessAsString = Console.ReadLine();
+                userGuess = Convert.ToInt32(userGuessAsString);
+            }
+
+           
+            if (userGuess == randNum)
+            {
+                Console.WriteLine($"Wow! Your guess was correct! The number was {randNum}");
+            }
 
         }
     }
