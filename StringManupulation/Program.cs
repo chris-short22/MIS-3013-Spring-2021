@@ -20,7 +20,7 @@ namespace StringManupulation
             //
             string realProblem = "tAylOr SwIFt, tHe WeEknD, TRaVis sCoTt, aRiANa gRAndE, bIlLiE eiLiSh";
             //[] just means that there are many strings
-            string[] artistNames = realProblem.Split(','); //or (", ")
+            string[] artistNames = realProblem.Split(', '); //or (", ")
 
             for (int i = 0; i < artistNames.Length; i++)
             {
@@ -36,10 +36,10 @@ namespace StringManupulation
                 string firstName = names[0];
                 string lastName = names[1];
 
-                firstName = firstName.ToUpper()[0] + firstName.Substring(1);
+               /* firstName = firstName.ToUpper()[0] + firstName.Substring(1);
                 lastName = lastName.ToUpper()[0] + lastName.Substring(1);
 
-                Console.WriteLine($"{firstName} {lastName}");
+                Console.WriteLine($"{firstName} {lastName}");  */
             }
 
            // for (int i = 0; i < artistWithProperName.Length; i++)
